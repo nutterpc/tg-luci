@@ -18,7 +18,7 @@ Step 8) Run opkg update. This is crucial for the next step, so **DON'T MISS IT**
 Step 9) Now here's where the fun begins. Run the following command: opkg --force-reinstall --force-overwrite --force-checksum install *.ipk
 		 This command will then forcibly install the required libraries to continue with the next step
 Step 10) Run uci commit & reboot the router. This will allow a clean slate to continue. Proceed with the next step/s
-Step 11) Use the following command to get luci installed: opkg install luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc <---- These extra libraries are *CRITICAL*
+Step 11) Use the following command to get luci installed: opkg update && opkg install luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc <---- These extra libraries are *CRITICAL*
 Step 12) Run uci commit. Then reboot.
 Step 13) Once it reboots, browse to the routers designated IP. Login as per usual (root/root)
 Step 14) Change the root password.
