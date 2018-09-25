@@ -2,7 +2,7 @@ tg-luci
 Package Files & Directions required for installation of Luci. (TG789/799)
 -
 Step 1) Run Autoflash GUI by Mark Smith. Run this tool to obtain root access.
--
+
 Step 2) Download WinSCP, set to SCP and connect to the router
 
 Step 3) Download libraries provided by me (Github or Owncloud links provided) + either technicolor-tg799vac-hacks-master or install.sh & unzip. 
