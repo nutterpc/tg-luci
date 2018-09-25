@@ -5,9 +5,13 @@ Step 1) Run Autoflash GUI by Mark Smith. Run this tool to obtain root access.
 
 Step 2) Download WinSCP, set to SCP and connect to the router
 
-Step 3) Download libraries provided by me (Github or Owncloud links provided) + either technicolor-tg799vac-hacks-master or install.sh & unzip. 
-		Using WinSCP, transfer these across, along with the script/s files contained inside step 3 to the /root directory
+Step 3) Download libraries & script provided by my Github or Owncloud links or either technicolor-tg799vac-hacks-master & unzip. 
+	Using WinSCP, transfer these across, along with the script/s files contained inside step 3 to the /root directory.
+	There will be 2 different ways you can proceed from here. Install.sh is for those who want to maintain nginx. The
+	OwnCloud Link will have the more "surgical" approach. So make sure to choose wisely.
 
+If using install.sh, you can proceed to Step 6, if not, continue as per directed.
+-
 Step 4) Using vi, edit the scripts as per your liking, paying close attention to the sections that are hashed out, these are areas that **NEED** to be edited & will be hashed out with ##. 
 		Save & exit, then run the following command: chmod +x *.sh
 
@@ -19,6 +23,8 @@ Step 6) Run the script/s (Depending which ones you choose). If it's mine, it wil
 NOTE: PLEASE ENSURE TO DO THE STEPS AS REQUESTED. DON'T ASK FOR HELP OTHERWISE. IT'S DONE THIS WAY FOR A REASON*
 ****************************************************************************************************************
 
+If using install.sh, you can proceed to Step 12, if not, continue as per directed.
+-
 Step 7) Using vi, edit the following file: /etc/opkg.conf & check to see if the following lines have been successfully installed. If not, edit the file and add them before proceeding.
 		arch all 100
 		arch brcm63xx 200
