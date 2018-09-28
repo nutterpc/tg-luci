@@ -7,3 +7,7 @@ opkg remove --force-depends uhttpd-mod-lua uhttpd-mod-ubus uhttpd
 echo "Removed LuCI Webserver (uhttpd)"
 rm -R /www_luci
 echo "Removed LuCI Directory"
+rm /etc/config/rpcd
+rm /etc/config/uhttpd
+echo "Removed Config Files"
+echo "Done"
