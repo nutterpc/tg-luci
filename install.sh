@@ -31,7 +31,7 @@ echo "Installing LuCI dependancies using opkg"
 rm -rf /tmp/tg-luci
 
 opkg install luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc
-echo "Installing LuCI"
+echo "Installed LuCI"
 
 mkdir /www_luci
 mv /www/cgi-bin /www_luci/
