@@ -18,7 +18,7 @@ EOF
 echo "Added appropriate lists into distfeeds.conf"
 
 opkg update
-echo "Updated opkg"
+echo "Updating opkg"
 
 curl -Lk https://github.com/nutterpc/tg-luci/tarball/master --output /tmp/tg-luci.tar.gz
 echo "Downloaded the .ipk files"
@@ -50,9 +50,9 @@ if [ ! $(uci get uhttpd.main.listen_http | grep 9080) ]; then
 	uci add_list uhttpd.main.listen_https='[::]:9433'
 	uci set uhttpd.main.home='/www_luci'
 fi
-echo "Changed uhttpd port to 9080"
+echo "Changed uhttpd ports to 9080/9443"
 
 uci commit
 echo "Committed UCI changes"
 /etc/init.d/uhttpd restart
-echo "Done. Restart your modem now for the changes to take effect"
+echo "Done. It is advised to restart your modem now for the changes to take effect"
