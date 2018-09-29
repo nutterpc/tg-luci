@@ -33,9 +33,9 @@
 	<li>Change the root password.</li>
 <br>
 	<li>Thank me :) & enjoy Release 1 OpenWRT TG789/799. You get base functionality + Wireless. There will be minor 			reporting glitching on the wireless, but that will get fixed in time.<br>
-	**DON'T INSTALL EXTRA MODULES YET**.<br> There are a few known modules which cause the router to segfault. As we get 			more time to experiment/add, the list will be expanded, but if you leave it as it is, it will *just work*
+	**DON'T INSTALL EXTRA MODULES YET**.<br> There are a few known modules which cause the router to segfault. As we get 			more time to experiment/add, the list will be expanded, but if you leave it as it is, it will *just work*</li>
 <br>
-	<li>Ensure to run a configuration backup through Luci. Then keep it safe, so if in future you need to reinstall, its a quick 		restore.
+	<li>Ensure to run a configuration backup through Luci. Then keep it safe, so if in future you need to reinstall, its a quick 		restore.</li>
 <br>
 	<li>Pray for an unlocked bootloader</li>
 </ol>
