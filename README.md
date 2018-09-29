@@ -3,7 +3,6 @@
 <ul>
 <li>TG799vac</li>
 <li>TG789vac v2</li>
-<li>TG800vac</li>
 </ul>
 
 ## Disclamer
