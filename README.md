@@ -39,6 +39,10 @@
 	<li>Pray for an unlocked bootloader</li>
 </ol>
 
+## Modules found to cause segfault (Will update as more are known):
+<ul>
+<li>luci-app-sqm</li>
+</ul>
 
 
 
