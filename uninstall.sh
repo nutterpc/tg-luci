@@ -8,7 +8,7 @@ log "Backing up uci.so..."
 mv /usr/lib/lua/uci.so /usr/lib/lua/uci.so_bak
 
 log "Removing LuCI and dependancies..."
-opkg remove --force-depends luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc libiwinfo-lua libiwinfo libuci-lua rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-rpcsys rpcd uhttpd-mod-lua uhttpd-mod-ubus uhttpd
+opkg remove --autoremove luci luci-mod-rpc libiwinfo-lua libuci-lua rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-rpcsys uhttpd-mod-lua uhttpd-mod-ubus
 
 log "Restoring tch uci.so..."
 rm /usr/lib/lua/uci.so
