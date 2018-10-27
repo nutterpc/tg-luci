@@ -12,7 +12,7 @@ arch brcm63xx 200
 arch brcm63xx-tch 300
 EOF
 
-logger "Adding lists into distfeeds.conf..."
+logger "Adding chaos_calmer feeds into distfeeds.conf..."
 cat > /etc/opkg/distfeeds.conf << EOF
 src/gz chaos_calmer http://archive.openwrt.org/chaos_calmer/15.05.1/brcm63xx/smp/packages/base
 src/gz luci http://archive.openwrt.org/chaos_calmer/15.05.1/brcm63xx/smp/packages/luci
@@ -28,7 +28,7 @@ opkg update
 logger "Downloading recompiled packages..."
 curl -Lk https://github.com/nutterpc/tg-luci/tarball/master --output /tmp/tg-luci.tar.gz
 
-logger "Untarring..."
+logger "Untarring tg-luci.tar.gz..."
 mkdir /tmp/tg-luci
 tar -xzf /tmp/tg-luci.tar.gz -C /tmp/tg-luci
 
@@ -47,16 +47,16 @@ mv /usr/lib/lua/uci.so_bak /usr/lib/lua/uci.so
 logger "Installing LuCI..." 
 opkg install luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc
 
-logger "Patching luci to load uci_luci.so..."
+logger "Patching LuCI to load uci_luci.so..."
 sed -i 's/require "uci"/require "uci_luci"/g' /usr/lib/lua/luci/model/uci.lua
 
-logger "Moving files..."
+logger "Moving LuCI www to www_luci..."
 mkdir /www_luci
 mv /www/cgi-bin /www_luci/
 mv /www/luci-static /www_luci/
 mv /www/index.html /www_luci/
 
-logger "Changing uhttpd port to 9080..."
+logger "Changing uhttpd ports to 9080/9443..."
 if [ ! $(uci get uhttpd.main.listen_http | grep 9080) ]; then
 	uci del_list uhttpd.main.listen_http='0.0.0.0:80'
 	uci add_list uhttpd.main.listen_http='0.0.0.0:9080'
