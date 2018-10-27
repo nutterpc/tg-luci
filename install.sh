@@ -1,8 +1,8 @@
 #!/bin/sh
 
 logger() {
-logger -s -t "tg-LuCI Install Script:" "$1"
-echo "$1"
+	logger -s -t "tg-LuCI Install Script:" "$1"
+	echo "$1"
 }
 
 logger "Adding achitecture..."
@@ -72,4 +72,5 @@ fi
 logger "Committing changes and restarting uhttpd..."
 uci commit
 /etc/init.d/uhttpd restart
+
 logger "LuCI is now READY!"
