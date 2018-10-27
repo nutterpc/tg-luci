@@ -1,23 +1,21 @@
 #!/bin/sh
 
-logger() {
-	logger -s -t "tg-LuCI Install Script:" "$1"
-	echo "$1"
+log() {
+	logger -s -t "tg-LuCI Install Script" "$1"
 }
 
-logger "Backing up uci.so..."
+log "Backing up uci.so..."
 mv /usr/lib/lua/uci.so /usr/lib/lua/uci.so_bak
 
-logger "Removing LuCI and dependancies..."
-opkg remove --force-depends luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc libiwinfo-lua libiwinfo libuci-lua rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-rpcsys rpcd uhttpd-mod-lua uhttpd-mod-ubus uhttpd
+log "Removing LuCI and dependancies..."
+opkg remove --autoremove luci luci-mod-rpc libiwinfo-lua libuci-lua rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-rpcsys uhttpd-mod-lua uhttpd-mod-ubus
 
-logger "Restoring tch uci.so..."
-rm /usr/lib/lua/uci.so
+log "Restoring tch uci.so..."
 mv /usr/lib/lua/uci.so_bak /usr/lib/lua/uci.so
 
-logger "Removing www_luci and config Files..."
+log "Removing www_luci and config Files..."
 rm -R /www_luci
 rm /etc/config/rpcd
 rm /etc/config/uhttpd
 
-logger "Done, LuCI removed!"
+log "Done, LuCI removed!"
