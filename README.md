@@ -6,7 +6,7 @@
 </ul>
 
 ## Disclamer
-<b>If you manage to make your hardware 'infunctional' the creator and contributors DO NOT take any responsibility. If you manage to make your hardware 'infunctional' by not following the instructions DO NOT ask for help.</b>
+<b>If you manage to make your hardware 'inoperable' the creator and contributors DO NOT take any responsibility. If you manage to make your hardware 'inoperable' by not following the instructions DO NOT ask for help.</b>
 
 ### Using Install.sh
 <ol type="1">
