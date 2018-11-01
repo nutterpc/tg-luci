@@ -1,13 +1,21 @@
 #!/bin/sh
-opkg remove --force-depends luci luci-lib-json luci-lib-jsonc luci-lib-nixio luci-mod-rpc
-echo "Removed LuCI"
-opkg remove --force-depends libiwinfo-lua libiwinfo libuci-lua rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-rpcsys rpcd
-echo "Removed LuCI Dependancies"
-opkg remove --force-depends uhttpd-mod-lua uhttpd-mod-ubus uhttpd
-echo "Removed LuCI Webserver (uhttpd)"
+
+log() {
+	logger -s -t "tg-LuCI Install Script" "$1"
+}
+
+log "Backing up uci.so..."
+mv /usr/lib/lua/uci.so /usr/lib/lua/uci.so_bak
+
+log "Removing LuCI and dependancies..."
+opkg remove --autoremove luci luci-mod-rpc libiwinfo-lua libuci-lua rpcd-mod-file rpcd-mod-iwinfo rpcd-mod-rpcsys uhttpd-mod-lua uhttpd-mod-ubus
+
+log "Restoring tch uci.so..."
+mv /usr/lib/lua/uci.so_bak /usr/lib/lua/uci.so
+
+log "Removing www_luci and config Files..."
 rm -R /www_luci
-echo "Removed LuCI Directory"
 rm /etc/config/rpcd
 rm /etc/config/uhttpd
-echo "Removed Config Files"
-echo "Done"
+
+log "Done, LuCI removed!"
